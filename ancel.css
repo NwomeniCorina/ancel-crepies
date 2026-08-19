@@ -1,0 +1,330 @@
+/* =========================
+   RÉGLAGES GÉNÉRAUX
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #111;
+    color: white;
+}
+
+
+/* =========================
+   PHOTO PRINCIPALE
+========================= */
+
+.photo-crepes {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+/* =========================
+   TEXTE DÉFILANT
+========================= */
+
+.defilement {
+    width: 100%;
+    overflow: hidden;
+    background: #111;
+    border-top: 3px solid orangered;
+    border-bottom: 3px solid orangered;
+    padding: 12px 0;
+}
+
+.texte-defilant {
+    display: inline-block;
+    white-space: nowrap;
+
+    font-size: 20px;
+    font-weight: bold;
+    color: #f5c542;
+
+    animation: defilement 18s linear infinite;
+}
+
+
+/* Animation droite → gauche */
+
+@keyframes defilement {
+
+    from {
+        transform: translateX(100%);
+    }
+
+    to {
+        transform: translateX(-100%);
+    }
+
+}
+
+
+/* =========================
+   PRÉSENTATION
+========================= */
+
+.presentation {
+    text-align: center;
+    padding: 50px 20px;
+    background: white;
+    color: black;
+}
+
+.presentation h1 {
+    font-size: 42px;
+    margin-bottom: 20px;
+}
+
+.noir {
+    color: black;
+}
+
+.orange {
+    color: orangered;
+}
+
+.presentation h2 {
+    font-size: 28px;
+    line-height: 1.3;
+    margin-bottom: 20px;
+}
+
+.presentation p {
+    font-size: 18px;
+    color: #444;
+    margin-bottom: 30px;
+}
+
+
+/* =========================
+   BOUTONS
+========================= */
+
+.boutons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    text-decoration: none;
+    padding: 15px 25px;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: 0.3s;
+    display: inline-block;
+}
+
+.whatsapp {
+    background: #25D366;
+    color: white;
+}
+
+.whatsapp:hover {
+    transform: scale(1.08);
+}
+
+.prestations-btn {
+    background: orangered;
+    color: white;
+}
+
+.prestations-btn:hover {
+    transform: scale(1.08);
+}
+
+
+/* =========================
+   SECTION CRÊPES
+========================= */
+
+.section-prestations {
+    padding: 70px 20px;
+    text-align: center;
+    background: #f5f5f5;
+    color: #111;
+}
+
+.section-prestations h2 {
+    font-size: 35px;
+    margin-bottom: 15px;
+    color: #111;
+}
+
+.intro {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 40px;
+}
+
+
+/* =========================
+   CARTES DES CRÊPES
+========================= */
+
+.cartes-crepes {
+    max-width: 1200px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 30px;
+}
+
+
+/* Chaque carte */
+
+.crepe-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.18);
+
+    transition: 0.4s;
+}
+
+
+/* Animation au passage de la souris */
+
+.crepe-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+}
+
+
+/* Photo */
+
+.crepe-card img {
+    width: 100%;
+    height: 230px;
+
+    object-fit: cover;
+    display: block;
+}
+
+
+/* Texte */
+
+.contenu-crepe {
+    padding: 25px;
+}
+
+.contenu-crepe h3 {
+    font-size: 25px;
+    color: orangered;
+    margin-bottom: 15px;
+}
+
+.contenu-crepe p {
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+
+/* Prix */
+
+.prix {
+    display: block;
+
+    font-size: 22px;
+    font-weight: bold;
+
+    color: #111;
+
+    margin-bottom: 20px;
+}
+
+
+/* Bouton commander */
+
+.commander {
+    display: inline-block;
+
+    padding: 12px 25px;
+
+    background: #25D366;
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: 25px;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.commander:hover {
+    transform: scale(1.08);
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    text-align: center;
+    padding: 25px;
+
+    background: #111;
+    color: white;
+}
+
+
+/* =========================
+   VERSION TÉLÉPHONE
+========================= */
+
+@media (max-width: 800px) {
+
+    .cartes-crepes {
+        grid-template-columns: 1fr;
+        max-width: 450px;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .presentation h1 {
+        font-size: 32px;
+    }
+
+    .presentation h2 {
+        font-size: 23px;
+    }
+
+    .presentation p {
+        font-size: 16px;
+    }
+
+    .btn {
+        width: 90%;
+    }
+
+    .texte-defilant {
+        font-size: 17px;
+    }
+
+    .crepe-card img {
+        height: auto;
+    }
+
+}
